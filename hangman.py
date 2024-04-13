@@ -63,6 +63,12 @@ def game():
                 game()
             break
         lives, letters_of_word = get_guess(chosen_word, lives, letters_of_word)
+    # If the player has no lives remaining, offer to play again
+    if lives == 0:
+        print("\nYou lose!")
+        play_again = input("Would you like to play again? (yes/no): ").lower()
+        if play_again == "yes" or play_again == "y":
+            game()
 
 if __name__ == "__main__":
     game()
